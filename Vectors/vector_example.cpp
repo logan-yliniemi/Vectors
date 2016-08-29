@@ -7,9 +7,48 @@
 //
 
 #include <iostream>
+#include <vector>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+using namespace std;
+
+class cat{
+public:
+    int age;
+};
+
+void int_vector_cout(vector<int> vI){
+    cout << "V: ";
+    for(int i=0; i<vI.size(); i++){
+        cout << vI.at(i) << "\t";
+    }
+    cout << endl;
+}
+
+int main() {
+    
+    vector<int> vI; // a vector of integers.
+    vector<int> vI_2; // a vector of integers.
+    vector<double> vD; // a vector of doubles.
+    vector<bool> vB; // a vector of booleans.
+    vector<cat> vC; // a vector of a custom class.
+    /// all empty at this point.
+    
+    vector< vector<int> > vvI;
+    /// a vector of vectors.
+    
+    int_vector_cout(vI);
+    for(int i=0; i<10; i++){
+        vI.push_back(i); /// assembles vI of numbers 0 through 10.
+        int_vector_cout(vI);
+    }
+    
+    vI.erase(vI.begin()+4); /// erases 4th element
+    int_vector_cout(vI);
+    vI.erase(vI.begin()+4); /// erases 4th element (which used to be 5th)
+    int_vector_cout(vI);
+    vI.clear(); /// erases all information from vector
+    int_vector_cout(vI);
+
+    
     return 0;
 }
