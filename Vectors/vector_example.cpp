@@ -46,6 +46,8 @@ int main() {
     int_vector_cout(vI);
     vI.erase(vI.begin()+4); /// erases 4th element (which used to be 5th)
     int_vector_cout(vI);
+    vI.erase(vI.begin(),vI.begin()+2); /// erases first two elements
+    int_vector_cout(vI);
     vI.clear(); /// erases all information from vector
     int_vector_cout(vI);
 
