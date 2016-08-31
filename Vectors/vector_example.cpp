@@ -16,8 +16,8 @@ public:
     int age;
 };
 
-void int_vector_cout(vector<int> vI){
-    cout << "V: ";
+void int_vector_cout(vector<int> vI, string name){
+    cout << name << ":\t";
     for(int i=0; i<vI.size(); i++){
         cout << vI.at(i) << "\t";
     }
@@ -36,21 +36,36 @@ int main() {
     vector< vector<int> > vvI;
     /// a vector of vectors.
     
-    int_vector_cout(vI);
+    cout << "Basic Integer Vector" << endl;
+    int_vector_cout(vI,"vI");
     for(int i=0; i<10; i++){
         vI.push_back(i); /// assembles vI of numbers 0 through 10.
-        int_vector_cout(vI);
+        int_vector_cout(vI,"vI");
     }
     
     vI.erase(vI.begin()+4); /// erases 4th element
-    int_vector_cout(vI);
+    int_vector_cout(vI,"vI");
     vI.erase(vI.begin()+4); /// erases 4th element (which used to be 5th)
-    int_vector_cout(vI);
+    int_vector_cout(vI,"vI");
     vI.erase(vI.begin(),vI.begin()+2); /// erases first two elements
-    int_vector_cout(vI);
+    int_vector_cout(vI,"vI");
     vI.clear(); /// erases all information from vector
-    int_vector_cout(vI);
+    int_vector_cout(vI,"vI");
 
+    cout << endl;
+    cout << "Initializing Integer Vector" << endl;
+    
+    vector<int> vI_3 = {0,7,5};
+    int_vector_cout(vI_3,"vI_3");
+    
+    cout << endl;
+    cout << "Sorting Vector" << endl;
+    int_vector_cout(vI_3,"vI_3");
+    cout << "SORT" << endl;
+    sort(vI_3.begin(),vI_3.end()); /// built in C++ function in std library
+    int_vector_cout(vI_3,"vI_3");
+    
+    cout << "END" << endl << endl;
     
     return 0;
 }
